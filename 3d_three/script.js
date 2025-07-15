@@ -151,17 +151,17 @@ themeButton.addEventListener("click", () => {
   themeButton.textContent = isDarkMode ? "Light Mode" : "Dark Mode";
   renderer.setClearColor(isDarkMode ? 0x000000 : 0xf0f0f0);
 
-  // Update orbit lines to match theme
+
   scene.traverse((obj) => {
     if (obj.isLine) {
       obj.material.color.set(isDarkMode ? 0x444444 : 0x888888);
     }
   });
 
-  // Update sun color
+
   sun.material.color.set(isDarkMode ? 0xffff00 : 0xffcc00);
 
-  // 🧠 Update label text color dynamically
+
   document.querySelectorAll("#controls label").forEach((label) => {
     label.style.color = isDarkMode ? "white" : "#111";
   });
